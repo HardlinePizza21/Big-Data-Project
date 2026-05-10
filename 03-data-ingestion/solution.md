@@ -1,0 +1,1 @@
+first we should create a S3 bucket in the same availabilty region as the Cluster to procces the data
