@@ -6,4 +6,4 @@ In this case ```health_violations.py``` is an script that will be executed over 
 
 <img src="../images/Screenshot from 2026-05-10 08-34-58.png">
 
-The steps are also stored in the S3, and the arguments ```--data_source s3://tutorial-bucket-eafit/food_establishment_data.csv``` ```--output_uri s3://tutorial-bucket-eafit/myOutputFolder``` is to indicate where the data is and where the result should go, Is important to take in count that, there is not yet, an intelligent way to automatically aply those *steps* over the data
+The steps are also stored in the S3, and the arguments ```--data_source s3://tutorial-bucket-eafit/food_establishment_data.csv``` ```--output_uri s3://tutorial-bucket-eafit/myOutputFolder``` is to indicate where the data is and where the result should go, Is important to take in count that, there is not yet, an intelligent way to automatically apply those *steps* over the data
