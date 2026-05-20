@@ -6,7 +6,7 @@ Through this process I came to understand that processing a CSV with nearly 32.8
 
 After securing a better connection I was able to upload the data to the RDS and migrate it to S3 using the AWS CLI through a script that sends a snapshot of the database to S3.
 
-<img src="../images/Screenshot from 2026-05-17 17-40-21.png" width="2000" height="300">
+<img src="../images/Screenshot from 2026-05-17 17-40-21.png" width="2000" height="150">
 
 And now into the S3 we got.
 
