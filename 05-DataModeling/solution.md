@@ -1,1 +1,1 @@
-La tabla esta en OpenSERSDECSV
+Once the data is cleaned, we proceed with the creation of the Hive table using the script [tableCreation.sql](./tableCreation.sql).
