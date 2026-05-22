@@ -1,24 +1,29 @@
 CREATE EXTERNAL TABLE storeGov (
-  ESTACION_ID               INT,
-  NOMBRE_FGDA               STRING,
-  NOMBRE_EST                STRING,
-  MSFL_CODE                 STRING,
-  MED_CONCENTRACION_ESTANDAR DOUBLE,
-  MED_FECHA_INICIO          STRING,
-  MED_FECHA_FINAL           STRING,
-  LATITUD                   DOUBLE,
-  LONGITUD                  DOUBLE,
-  ALTITUD                   INT,
-  NOMBRE_UNIDAD             STRING,
-  SIGLA_UNIDAD              STRING,
-  DURACION                  INT,
-  CODIGO_DEPARTAMENTO       INT,
-  DEPARTAMENTO              STRING,
-  CODIGO_MUNICIPIO          INT,
-  MUNICIPIO                 STRING,
-  TIPO_ESTACION             STRING
+    estacion_id INT,
+    nombre_fgda STRING,
+    nombre_est STRING,
+    msfl_code STRING,
+    med_concentracion_estandar INT,
+
+    med_fecha_inicio TIMESTAMP,
+    med_fecha_final TIMESTAMP,
+
+    latitud DOUBLE,
+    longitud DOUBLE,
+    altitud DOUBLE,
+
+    nombre_unidad STRING,
+    sigla_unidad STRING,
+
+    duracion INT,
+    codigo_departamento INT,
+
+    departamento STRING,
+
+    codigo_municipio STRING,
+    municipio STRING,
+
+    tipo_estacion STRING
 )
-ROW FORMAT DELIMITED
-FIELDS TERMINATED BY ','
-STORED AS TEXTFILE
-LOCATION 's3://smadrido/store/';
+STORED AS PARQUET
+LOCATION 's3://smadrido/clean-data/';
