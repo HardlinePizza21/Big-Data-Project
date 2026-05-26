@@ -4,6 +4,3 @@ En nuestro data set hay 20 depertamentos diferentes y 127 diferentes municipios,
 	<img src="../images/DistinctDepartments.png" width="500">
 </div>
 
-
-
-
