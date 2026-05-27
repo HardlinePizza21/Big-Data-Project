@@ -3,9 +3,11 @@
 
 For the data analysis, we utilized **Hive**, **Athena**, and **SparkSQL** to extract insights from the enriched meteorological dataset. Below, we present evidence of tool usage, results, and interpretations for each analytical question.
 
----
+All SQL queries used to answer the questions are available in [SQLAnalysis.sql](./SQLAnalysis.sql).
 
-## Athena Usage Evidence
+## 1. Which station has the highest average heat index (apparent temperature)?
+
+### Athena Usage Evidence
 
 Athena automatically loads Hive partitions from the `meteo_enriched` dataset, making queries more efficient. See the evidence below:
 
@@ -13,11 +15,7 @@ Athena automatically loads Hive partitions from the `meteo_enriched` dataset, ma
   <img src="../images/AthenaEvidence.png" width="500" alt="Athena Usage Evidence">
 </p>
 
-All SQL queries used to answer the questions are available in [SQLAnalysis.sql](./SQLAnalysis.sql).
 
----
-
-## 1. Which station has the highest average heat index (apparent temperature)?
 
 <details>
 <summary><strong>View Results Table</strong></summary>
@@ -36,7 +34,6 @@ All SQL queries used to answer the questions are available in [SQLAnalysis.sql](
 >
 > The station with ID **26179** (AEROPUERTO, Magdalena, Santa Marta) records the highest average heat index, indicating the greatest perceived temperature.
 
----
 
 ## 2. Is it hotter during the first or second half of the month?
 
@@ -56,21 +53,20 @@ All SQL queries used to answer the questions are available in [SQLAnalysis.sql](
 >
 > The answer depends on the location. For example, at station **8208** (LAS FERIAS, Bogotá, D.C.), the second half of the month is slightly warmer. However, the difference is minimal, reflecting Colombia's lack of pronounced seasons and relatively stable temperatures year-round.
 
----
 
-## SparkSQL Usage Evidence
+
+
+## 3. Which stations record the highest annual accumulated precipitation, and how does it vary across years?
+
+### SparkSQL Usage Evidence
 
 We used SparkSQL in HUE to answer the next question. See the evidence below:
 
 <p align="center">
   <img src="../images/SparkSQLUseEvidence.png" width="1000" alt="SparkSQL Usage Evidence">
 </p>
-
----
-
-## 3. Which stations record the highest annual accumulated precipitation, and how does it vary across years?
-
 <details>
+
 <summary><strong>View Results Table</strong></summary>
 
 | # | Station ID | Year | Total Precip. (mm) | Avg Precip./Hour | Hours  |
@@ -86,7 +82,6 @@ We used SparkSQL in HUE to answer the next question. See the evidence below:
 >
 > The stations with the highest accumulated precipitation are **Belalcázar, Caldas** and **Villamaría, Caldas**. There is noticeable variation in annual totals across years.
 
----
 
 ## 4. How does average relative humidity vary throughout the year, and what is its relationship with apparent temperature?
 
@@ -113,9 +108,9 @@ We used SparkSQL in HUE to answer the next question. See the evidence below:
 >
 > As humidity increases, the heat index also rises, indicating a positive correlation. The heat index tends to be lower at the beginning and end of the year.
 
----
+## 5. Which departments have the most stations with high temperature records?
 
-## Hive Usage Evidence
+### Hive Usage Evidence
 
 For the final question, we used Hive. See the evidence below:
 
@@ -123,16 +118,14 @@ For the final question, we used Hive. See the evidence below:
   <img src="../images/HiveUseEvidence.png" width="1000" alt="Hive Usage Evidence">
 </p>
 
-### Result Example
+#### Result 
 
 <p align="center">
   <img src="../images/HiveResultQ5.png" width="1000" alt="Hive Result Q5">
 </p>
 
----
-
-## 5. Which departments have the most stations with high temperature records?
 
 > **Observation:**
 >
 > Several occurrences are found in the department of **Antioquia**, including Medellín. However, the capital does not always appear, possibly due to a lack of stations in the city or the strategic placement of existing ones in surrounding areas.
+
