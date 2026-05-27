@@ -37,8 +37,7 @@ LOCATION 's3://smadrido/clean-data/';
 
 -- Tabla externa en Hive/Athena (ejecutar una vez)
 CREATE EXTERNAL TABLE IF NOT EXISTS meteo_enriched (
-    estacion_id          INT,
-    timestamp            TIMESTAMP,
+    `timestamp`          BIGINT,
     day                  INT,
     temperature_2m       FLOAT,
     apparent_temperature FLOAT,
@@ -56,9 +55,13 @@ CREATE EXTERNAL TABLE IF NOT EXISTS meteo_enriched (
     lat                  DOUBLE,
     lon                  DOUBLE
 )
-PARTITIONED BY (year INT, month INT, estacion_id INT)
+PARTITIONED BY (
+    year INT,
+    month STRING,
+    estacion_id INT
+)
 STORED AS PARQUET
-LOCATION 's3://smadrido/meteo-enriched/'
+LOCATION 's3://smadrido/meteo-enriched-flat/'
 TBLPROPERTIES ('parquet.compress'='SNAPPY');
 
 -- Reparar particiones después de cada ingesta

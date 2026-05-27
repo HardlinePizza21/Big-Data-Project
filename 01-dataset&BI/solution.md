@@ -1,4 +1,4 @@
-For our business, we have chosen air pollution in Colombia. We have two data sources:
+For our business, we have chosen air pollution and weather in Colombia. We have two data sources:
 
 The first source is [Open-Meteo Air Quality](https://open-meteo.com/en/docs/air-quality-api) Air Quality, and the second one is ["Calidad del aire en Colombia"](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/Calidad-del-Aire-en-Colombia/g4t8-zkc3/about_data) a dataset distributed by the Colombian government.
 
@@ -50,16 +50,13 @@ and Open-Api looks like this
 ```
 So, we have developed the following business questions:
 
-- Which department has the highest number of stations? (Government dataset)
-- Is it usually hotter during the first 15 days of the month or during the last 15 days of the month? (Open-Meteo)
-- Which place has the highest heat index or apparent temperature? (Crossed data)
+## Business Questions
 
+- **Q1:** Which station has the highest average heat index (`apparent_temperature`)?
+- **Q2:** Is it generally hotter during the first half or the second half of the month?
+  - Global comparison
+  - Per-station comparison
+- **Q3:** Which stations record the highest annual accumulated precipitation and how does it vary across years?
+- **Q4:** How does average relative humidity vary throughout the year and what is its relationship with apparent temperature?
+- **Q5:** Which municipalities have the highest average concentrations of PM2.5 and PM10, the most dangerous pollutants for respiratory health?
 
-//ELIMINAR
-TODO: 
-RH = relative humidity
-T = temperature
-Heat Index = -42.379 + (2.04901523*T) + (10.14333127*RH) - (.22475541*T*RH) - (.00683783*T*T) - (.05481717*RH*RH) + (.00122874*T*T*RH) + (.00085282*T*RH*RH) - (.00000199*T*T*RH*RH)
-
-Easy way 
-Si no quieres usar ecuaciones complejas, puedes calcular un estimado rápido en grados Celsius usando una regla práctica:Asegúrate de que la temperatura real supere los \(26^{\circ }\text{C}\).A la humedad relativa en porcentaje, réstale \(40\) y divide el resultado entre \(10\).Súmale este valor directamente a la temperatura real.

@@ -10,3 +10,7 @@ The easiest solution would have been to use PySpark directly, but since this pro
 
 <img src="../images/newDataCleaningPipeline.png" width="400">
 
+For the Open-Meteo table, the date field had to be handled as a BigInt for compatibility with some query engines, and the value was parsed back into a proper datetime only at query time.
+
+
+
