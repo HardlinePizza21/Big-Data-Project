@@ -108,7 +108,7 @@ We used SparkSQL in HUE to answer the next question. See the evidence below:
 >
 > As humidity increases, the heat index also rises, indicating a positive correlation. The heat index tends to be lower at the beginning and end of the year.
 
-## 5. Which departments have the most stations with high temperature records?
+## 5. Which municipalities have the highest average concentrations of PM2.5 and PM10, the most dangerous pollutants for respiratory health?
 
 ### Hive Usage Evidence
 
